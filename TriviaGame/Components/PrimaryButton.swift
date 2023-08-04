@@ -1,20 +1,35 @@
+//  /*
 //
-//  PrimaryButton.swift
-//  TriviaGame
+//  Project: TriviaGame
+//  File: PrimaryButton.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 04.08.2023
 //
-//  Created by Elaidzha Shchukin on 04.08.2023.
+//  Status: in progress | Decorated
 //
+//  */
 
 import SwiftUI
 
 struct PrimaryButton: View {
+    
+    var text: String
+    var background: Color = Color("AccentColor")
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Text(text)
+            .foregroundColor(.white)
+            .padding()
+            .padding(.horizontal)
+            .background(background)
+            .cornerRadius(30)
+            .shadow(radius: 10)
     }
 }
 
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton()
+        PrimaryButton(text: "Next")
     }
 }
