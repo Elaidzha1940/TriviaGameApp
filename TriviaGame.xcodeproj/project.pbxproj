@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				E4AC8EF52A7D0FA100D1D8BC /* TriviaGameApp.swift */,
-				E4AC8EF72A7D0FA100D1D8BC /* ContentView.swift */,
+				E4AC8F072A7D1B6500D1D8BC /* Views */,
 				E4AC8F042A7D193800D1D8BC /* Components */,
 				E4AC8EF92A7D0FA100D1D8BC /* Assets.xcassets */,
 				E4AC8EFB2A7D0FA100D1D8BC /* TriviaGame.entitlements */,
@@ -78,6 +78,14 @@
 				E4AC8F052A7D195800D1D8BC /* PrimaryButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E4AC8F072A7D1B6500D1D8BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4AC8EF72A7D0FA100D1D8BC /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
