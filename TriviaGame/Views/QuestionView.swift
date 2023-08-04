@@ -25,13 +25,18 @@ struct QuestionView: View {
                 Text("1 out of 10")
                     .font(.system(size: 15, weight: .semibold, design: .serif))
                     .foregroundColor(Color("AccentColor"))
-
+            }
+            
+            ProgressBar(progress: 40)
+            
+            VStack(alignment: .leading, spacing: 20) {
+                
+                Text("")
             }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.8078432083, green: 0.78039217, blue: 0.7490196228))
-
     }
 }
 
