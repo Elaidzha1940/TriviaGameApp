@@ -11,3 +11,10 @@
 
 import Foundation
 import SwiftUI
+
+extension Text {
+    func lilactitle() -> some View {
+        self.font(.system(size: 30, weight: .semibold, design: .serif))
+            .foregroundColor(Color("AccentColor"))
+    }
+}

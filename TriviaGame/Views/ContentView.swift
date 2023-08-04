@@ -18,12 +18,11 @@ struct ContentView: View {
             VStack(spacing: 20) {
                 
                 Text("Trivia Game")
-                    .font(.system(size: 30, weight: .semibold, design: .serif))
-                    .foregroundColor(Color("AccentColor"))
+                    .lilactitle()
                 
                 Text("Are you ready  to test out your trivia skills ?")
                     .foregroundColor(Color("AccentColor"))
-
+                
             }
             PrimaryButton(text: "Let's Go!")
         }
