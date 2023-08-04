@@ -13,7 +13,25 @@ import SwiftUI
 
 struct QuestionView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(spacing: 40) {
+            HStack {
+                
+                Text("Trivia Game")
+                    .lilactitle()
+                
+                Spacer()
+                
+                Text("1 out of 10")
+                    .font(.system(size: 15, weight: .semibold, design: .serif))
+                    .foregroundColor(Color("AccentColor"))
+
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(red: 0.8078432083, green: 0.78039217, blue: 0.7490196228))
+
     }
 }
 
