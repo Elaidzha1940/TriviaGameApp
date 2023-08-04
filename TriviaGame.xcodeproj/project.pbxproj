@@ -13,6 +13,7 @@
 		E4AC8EFE2A7D0FA100D1D8BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4AC8EFD2A7D0FA100D1D8BC /* Preview Assets.xcassets */; };
 		E4AC8F062A7D195800D1D8BC /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC8F052A7D195800D1D8BC /* PrimaryButton.swift */; };
 		E4AC8F092A7D208E00D1D8BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC8F082A7D208E00D1D8BC /* Extensions.swift */; };
+		E4AC8F0B2A7D224F00D1D8BC /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC8F0A2A7D224F00D1D8BC /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E4AC8EFD2A7D0FA100D1D8BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4AC8F052A7D195800D1D8BC /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		E4AC8F082A7D208E00D1D8BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E4AC8F0A2A7D224F00D1D8BC /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				E4AC8EF72A7D0FA100D1D8BC /* ContentView.swift */,
+				E4AC8F0A2A7D224F00D1D8BC /* QuestionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4AC8F0B2A7D224F00D1D8BC /* QuestionView.swift in Sources */,
 				E4AC8F062A7D195800D1D8BC /* PrimaryButton.swift in Sources */,
 				E4AC8EF82A7D0FA100D1D8BC /* ContentView.swift in Sources */,
 				E4AC8EF62A7D0FA100D1D8BC /* TriviaGameApp.swift in Sources */,
