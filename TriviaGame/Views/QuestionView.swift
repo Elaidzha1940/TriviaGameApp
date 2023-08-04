@@ -31,7 +31,10 @@ struct QuestionView: View {
             
             VStack(alignment: .leading, spacing: 20) {
                 
-                Text("")
+                Text("Which of the following is not the name of a &quot;Bond Girl&quot;?")
+                    .font(.system(size: 20, weight: .semibold, design: .serif))
+                    .foregroundColor(.gray)
+
             }
         }
         .padding()
