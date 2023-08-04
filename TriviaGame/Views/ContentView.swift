@@ -15,9 +15,17 @@ struct ContentView: View {
     var body: some View {
         
         VStack(spacing: 40) {
-            
-            Image(systemName: "globe")
-        
+            VStack(spacing: 20) {
+                
+                Text("Trivia Game")
+                    .font(.system(size: 30, weight: .semibold, design: .serif))
+                    .foregroundColor(Color("AccentColor"))
+                
+                Text("Are you ready  to test out your trivia skills ?")
+                    .foregroundColor(Color("AccentColor"))
+
+            }
+            PrimaryButton(text: "Let's Go!")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
