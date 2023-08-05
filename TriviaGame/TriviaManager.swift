@@ -10,6 +10,7 @@
 //  */
 
 import Foundation
+import SwiftUI
 
 class TriviaManager: ObservableObject {
     
@@ -19,7 +20,8 @@ class TriviaManager: ObservableObject {
     @Published private (set) var reachedEnd = false
     @Published private (set) var answerselected = false
     @Published private (set) var question: AttributedString = ""
-    @Published private (set) var 
+    @Published private (set) var answerChoices: [Answer]
+    @Published private (set) var progress: CGFloat = 0.00
     
     init() {
         Task.init {
@@ -36,15 +38,15 @@ class TriviaManager: ObservableObject {
         do {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             
-            guard let (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Errror while fetching")}
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Errror while fetching")}
             
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            try decodedData = try decoder.decode(Trivia.self, from: data)
+            let decodedData = try decoder.decode(Trivia.self, from: data)
             
             DispatchQueue.main.async {
                 self.trivia = decodedData.results
-                self.length =  self.trivia.count
+                self.length = self.trivia.count
             }
             
         } catch {
@@ -59,5 +61,12 @@ class TriviaManager: ObservableObject {
         } else {
             reachedEnd = true
         }
+    }
+    
+    func setQuestion() {
+        answerselected = false
+        progress = CGFloat(Double(index + 1) / Double(length) * 350)
+        
+        
     }
 }
