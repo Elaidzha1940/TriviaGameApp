@@ -20,6 +20,19 @@ struct TriviaView: View {
         if triviaManager.reachedEnd {
             VStack(spacing: 20) {
                 
+                Text("Trivia Game")
+                    .lilactitle()
+                
+                Text("Congrats, you completed the game!")
+                
+                Text("You scored \(triviaManager.score) out of \(triviaManager.length)")
+                
+                Button {
+                    <#code#>
+                } label: {
+                    PrimaryButton(text: "Play again.")
+                }
+
             }
             .foregroundColor(Color("AccentColor"))
             .padding()
