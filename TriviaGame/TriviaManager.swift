@@ -22,6 +22,7 @@ class TriviaManager: ObservableObject {
     @Published private (set) var question: AttributedString = ""
     @Published private (set) var answerChoices: [Answer]
     @Published private (set) var progress: CGFloat = 0.00
+    @Published private (set) var score = 0
     
     init() {
         Task.init {
@@ -47,6 +48,7 @@ class TriviaManager: ObservableObject {
             DispatchQueue.main.async {
                 self.trivia = decodedData.results
                 self.length = self.trivia.count
+                self.setQuestion()
             }
             
         } catch {
@@ -72,6 +74,14 @@ class TriviaManager: ObservableObject {
             question = currentTriviaQuestion.formattedQuestion
             answerChoices = currentTriviaQuestion.ansewrs
             
+        }
+    }
+    
+    func selectAnswer(answer: Answer) {
+        answerselected = true
+        
+        if answer.isCorrect {
+            score += 1 
         }
     }
 }
