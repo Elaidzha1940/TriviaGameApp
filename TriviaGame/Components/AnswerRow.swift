@@ -17,7 +17,7 @@ struct AnswerRow: View {
     @State private var isSelected = false
     
     var green = Color(#colorLiteral(red: 0.1764705926, green: 0.6666666865, blue: 0.2588235438, alpha: 1))
-    //var red
+    var red = Color(#colorLiteral(red: 0.8268612027, green: 0.08678960055, blue: 0.1595013738, alpha: 1))
     
     var body: some View {
         
@@ -33,6 +33,7 @@ struct AnswerRow: View {
                 Spacer()
                 
                 Image(systemName: answer.isCorrect ? "checkmark.circle.fill" : "x.circle.fill")
+                    .foregroundColor(answer.isCorrect ? green : red )
             }
         }
         .padding()
