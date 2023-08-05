@@ -12,6 +12,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var triviaManager = TriviaManager()
+    
     var body: some View {
         
         NavigationView {
