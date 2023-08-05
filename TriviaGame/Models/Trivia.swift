@@ -24,11 +24,11 @@ struct Trivia: Decodable {
         var difficulty: String
         var question: String
         var correctAnswer: String
-        var incorrectAnswer: [String]
+        var incorrectAnswers: [String]
         
         var formattedQuestion: AttributedString {
             do {
-              return try AttributedString(markdown: question)
+                return try AttributedString(markdown: question)
             } catch {
                 print("Error setting formattedQuestion: \(error)")
                 return ""
@@ -37,12 +37,17 @@ struct Trivia: Decodable {
         
         var ansewrs: [Answer]  {
             do {
-              let correct = Answer(text: try AttributedString(markdown: correctAnswer), isCorrect: true)
+                let correct = Answer(text: try AttributedString(markdown: correctAnswer), isCorrect: true)
+                let incorrects = try incorrectAnswers.map { answer in
+                    Answer(text: try AttributedString(markdown: answer), isCorrect: false)
+                }
+                let allAnswers = correct + incorrects
                 
+                return allAnswers.shuffled()
             } catch {
                 print("Error setting ansewrs: \(error)")
                 return[]
-
+                
             }
         }
     }
