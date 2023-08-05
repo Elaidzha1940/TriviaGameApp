@@ -22,7 +22,10 @@ class TriviaManager: ObservableObject {
             do {
                let (data, response) = try await URLSession.shared.data(for: urlRequest)
                 
-                guard let (response as? HTTPURLResponse)?.statusCode = 200 else { fatalError("Errror while fetching")}
+                guard let (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Errror while fetching")}
+                
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
             } catch {
                 print("Error fetching trivis: \(error)")
