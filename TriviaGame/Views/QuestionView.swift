@@ -39,6 +39,10 @@ struct QuestionView: View {
                 AnswerRow(answer: Answer(text: "true", isCorrect: false))
                  
             }
+            
+            PrimaryButton(text: "Next")
+            
+            Spacer() 
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
