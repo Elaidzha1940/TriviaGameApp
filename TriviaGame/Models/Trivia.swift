@@ -26,6 +26,24 @@ struct Trivia: Decodable {
         var correctAnswer: String
         var incorrectAnswer: [String]
         
-        var formattedQuestion: AttributedString
+        var formattedQuestion: AttributedString {
+            do {
+              return try AttributedString(markdown: question)
+            } catch {
+                print("Error setting formattedQuestion: \(error)")
+                return ""
+            }
+        }
+        
+        var ansewrs: [Answer]  {
+            do {
+              let correct = Answer(text: try AttributedString(markdown: correctAnswer), isCorrect: true)
+                
+            } catch {
+                print("Error setting ansewrs: \(error)")
+                return[]
+
+            }
+        }
     }
 }
