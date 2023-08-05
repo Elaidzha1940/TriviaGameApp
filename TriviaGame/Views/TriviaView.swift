@@ -17,8 +17,18 @@ struct TriviaView: View {
     
     var body: some View {
         
-        QuestionView()
-            .environmentObject(triviaManager)
+        if triviaManager.reachedEnd {
+            VStack(spacing: 20) {
+                
+            }
+            .foregroundColor(Color("AccentColor"))
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(red: 0.8078432083, green: 0.78039217, blue: 0.7490196228))
+        } else {
+            QuestionView()
+                .environmentObject(triviaManager)
+        }
         
     }
 }
