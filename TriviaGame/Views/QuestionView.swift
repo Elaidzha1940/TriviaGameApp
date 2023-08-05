@@ -34,7 +34,10 @@ struct QuestionView: View {
                 Text("Which of the following is not the name of a &quot;Bond Girl&quot;?")
                     .font(.system(size: 20, weight: .semibold, design: .serif))
                     .foregroundColor(.gray)
-
+                
+                AnswerRow(answer: Answer(text: "false", isCorrect: true))
+                AnswerRow(answer: Answer(text: "true", isCorrect: false))
+                 
             }
         }
         .padding()
