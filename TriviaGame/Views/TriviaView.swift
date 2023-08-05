@@ -28,7 +28,7 @@ struct TriviaView: View {
                 Text("You scored \(triviaManager.score) out of \(triviaManager.length)")
                 
                 Button {
-                    <#code#>
+                    //action
                 } label: {
                     PrimaryButton(text: "Play again.")
                 }
