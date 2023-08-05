@@ -57,7 +57,7 @@ class TriviaManager: ObservableObject {
     func goToNextQuestion() {
         if index + 1 < length {
              index += 1
-            
+            setQuestion()
         } else {
             reachedEnd = true
         }
@@ -67,6 +67,11 @@ class TriviaManager: ObservableObject {
         answerselected = false
         progress = CGFloat(Double(index + 1) / Double(length) * 350)
         
-        
+        if index < length {
+            let currentTriviaQuestion = trivia[index]
+            question = currentTriviaQuestion.formattedQuestion
+            answerChoices = currentTriviaQuestion.ansewrs
+            
+        }
     }
 }
