@@ -13,4 +13,10 @@ import Foundation
 
 class TriviaManager: ObservableObject {
     
+    func fetchTrivia() async {
+        
+        guard let url = URL(string: "https://opentdb.com/api.php?amount=10") else { fatalError("Missing URL") {}
+        
+            let urlRequest = URLRequest 
+    }
 }
