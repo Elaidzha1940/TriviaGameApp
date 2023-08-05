@@ -25,24 +25,23 @@ struct QuestionView: View {
                 
                 Spacer()
                 
-                Text("1 out of 10")
+                Text("\(triviaManager.index + 1) out of \(triviaManager.length)")
                     .font(.system(size: 15, weight: .semibold, design: .serif))
                     .foregroundColor(Color("AccentColor"))
             }
             
-            ProgressBar(progress: 40)
+            ProgressBar(progress: triviaManager.progress)
             
             VStack(alignment: .leading, spacing: 20) {
                 
-                Text("Which of the following is not the name of a &quot;Bond Girl&quot;?")
+                Text(triviaManager.question)
                     .font(.system(size: 20, weight: .semibold, design: .serif))
                     .foregroundColor(.gray)
                 
-                AnswerRow(answer: Answer(text: "false", isCorrect: true))
-                    .environmentObject(triviaManager)
-                AnswerRow(answer: Answer(text: "true", isCorrect: false))
-                    .environmentObject(triviaManager)
-                 
+                ForEach(triviaManager.answerChoices, id: \.id) { answer in
+                    AnswerRow(answer: answer)
+                        .environmentObject(triviaManager)
+                }
             }
             
             PrimaryButton(text: "Next")
