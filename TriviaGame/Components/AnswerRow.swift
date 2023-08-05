@@ -14,11 +14,35 @@ import SwiftUI
 struct AnswerRow: View {
     
     var answer: Answer
+    @State private var isSelected = false
+    
+    var green = Color(#colorLiteral(red: 0.1764705926, green: 0.6666666865, blue: 0.2588235438, alpha: 1))
+    //var red
     
     var body: some View {
         
-        HStack{
+        HStack(spacing: 20) {
             
+            Image(systemName: "circle.fill")
+                .font(.caption)
+            
+            Text(answer.text)
+                .font(.system(size: 15, weight: .semibold, design: .serif))
+
+            if isSelected  {
+                Spacer()
+                
+                Image(systemName: answer.isCorrect ? "checkmark.circle.fill" : "x.circle.fill")
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .foregroundColor(Color("AccentColor"))
+        .background(.white)
+        .cornerRadius(10)
+        .shadow(color: .gray, radius: 5, x: 0.5, y: 0.5)
+        .onTapGesture {
+            isSelected = true
         }
     }
 }
