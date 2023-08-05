@@ -28,11 +28,13 @@ struct TriviaView: View {
                 Text("You scored \(triviaManager.score) out of \(triviaManager.length)")
                 
                 Button {
-                    //action
+                    Task.init {
+                        await triviaManager.fetchTrivia()
+                    }
                 } label: {
                     PrimaryButton(text: "Play again.")
                 }
-
+                
             }
             .foregroundColor(Color("AccentColor"))
             .padding()

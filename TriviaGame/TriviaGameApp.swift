@@ -1,9 +1,13 @@
+//  /*
 //
-//  TriviaGameApp.swift
-//  TriviaGame
+//  Project: TriviaGame
+//  File: TriviaGameApp.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 04.08.2023
 //
-//  Created by Elaidzha Shchukin on 04.08.2023.
+//  Status: in progress | Decorated
 //
+//  */
 
 import SwiftUI
 
