@@ -34,7 +34,6 @@ struct TriviaView: View {
                 } label: {
                     PrimaryButton(text: "Play again.")
                 }
-                
             }
             .foregroundColor(Color("AccentColor"))
             .padding()
@@ -44,7 +43,6 @@ struct TriviaView: View {
             QuestionView()
                 .environmentObject(triviaManager)
         }
-        
     }
 }
 

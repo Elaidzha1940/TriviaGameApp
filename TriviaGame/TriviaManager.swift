@@ -51,7 +51,6 @@ class TriviaManager: ObservableObject {
                 self.progress = 0.00
                 self.reachedEnd = false
                 
-                
                 self.trivia = decodedData.results
                 self.length = self.trivia.count
                 self.setQuestion()
@@ -64,7 +63,7 @@ class TriviaManager: ObservableObject {
     
     func goToNextQuestion() {
         if index + 1 < length {
-             index += 1
+            index += 1
             setQuestion()
         } else {
             reachedEnd = true
@@ -79,7 +78,6 @@ class TriviaManager: ObservableObject {
             let currentTriviaQuestion = trivia[index]
             question = currentTriviaQuestion.formattedQuestion
             answerChoices = currentTriviaQuestion.ansewrs
-            
         }
     }
     
@@ -87,7 +85,7 @@ class TriviaManager: ObservableObject {
         answerselected = true
         
         if answer.isCorrect {
-            score += 1 
+            score += 1
         }
     }
 }

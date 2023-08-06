@@ -58,6 +58,5 @@ struct AnswerRow_Previews: PreviewProvider {
     static var previews: some View {
         AnswerRow(answer: Answer(text: "Some", isCorrect: false))
             .environmentObject(TriviaManager())
-
     }
 }

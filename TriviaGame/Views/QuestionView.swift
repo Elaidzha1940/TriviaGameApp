@@ -51,7 +51,7 @@ struct QuestionView: View {
             }
             .disabled(!triviaManager.answerselected)
             
-            Spacer() 
+            Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
